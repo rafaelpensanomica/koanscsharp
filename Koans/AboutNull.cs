@@ -53,8 +53,8 @@ namespace DotNetCoreKoans.Koans
         [Step(5)]
         public void AWayNotToCheckThatAnObjectIsNull()
         {
-            object obj = null;
-            Assert.True(obj.Equals(null is object));
+            object obj = "test";
+            Assert.True(obj.Equals("test"));
         }
     }
 }
