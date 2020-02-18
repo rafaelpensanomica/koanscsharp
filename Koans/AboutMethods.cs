@@ -152,7 +152,7 @@ namespace DotNetCoreKoans.Koans
             string superSecretMessage = secret.GetType()
                 .GetMethod("SooperSeekrit", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance)
                 .Invoke(secret, null) as string;
-            Assert.Equal(FILL_ME_IN, superSecretMessage);
+            Assert.Equal("No one will find me!", superSecretMessage);
         }
 
         //Up till now we've had explicit return types. It's also
@@ -168,9 +168,9 @@ namespace DotNetCoreKoans.Koans
         [Step(11)]
         public void CallingGenericMethods()
         {
-            Assert.Equal(typeof(FillMeIn), GiveMeBack<int>(1).GetType());
+            Assert.Equal(typeof(int), GiveMeBack<int>(1).GetType());
 
-            Assert.Equal(FILL_ME_IN, GiveMeBack<string>("Hi!"));
+            Assert.Equal("Hi!", GiveMeBack<string>("Hi!"));
         }
     }
 }
